@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "next build",
-    "start": "next start -p $PORT"
+    "start": "node app.js",
+    "dev_start": "nodemon app.js"
   },
   "author": "Aasim",
   "license": "ISC",
