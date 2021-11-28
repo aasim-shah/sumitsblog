@@ -8,7 +8,7 @@
     "npm" : "6.14.14"
   },
   "scripts": {
-    "start" : "node app.js"
+    "start" : "node ./app.js"
   },
   "author": "Aasim",
   "license": "ISC",
