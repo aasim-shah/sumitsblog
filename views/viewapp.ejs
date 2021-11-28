@@ -1,0 +1,117 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<div class="container">
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>First Name  </td>
+                <td><%= user.first_name %></td>
+            </tr>
+            <tr>
+                <td>Middle Name  </td>
+                <td><%= user.middle_name %></td>
+            </tr>
+            <tr>
+                <td>Last Name  </td>
+                <td><%= user.last_name %></td>
+            </tr>
+            <tr>
+                <td>Father Name  </td>
+                <td><%= user.father_name %></td>
+            </tr>
+            <tr>
+                <td>Mother Name  </td>
+                <td><%= user.mother_name %></td>
+            </tr>
+            <tr>
+                <td>Email </td>
+                <td><%= user.email %></td>
+            </tr>
+            <tr>
+                <td>City   </td>
+                <td><%= user.city %></td>
+            </tr>
+            <tr>
+                <td>state   </td>
+                <td><%= user.state %></td>
+            </tr>
+            <tr>
+                <td>Address </td>
+                <td><%= user.address %></td>
+            </tr>      
+            <tr>
+                <td>Phone </td>
+                <td><%= app.phone %></td>
+            </tr>      
+            <tr>
+                <td>DoB </td>
+                <td><%= user.dob %></td>
+            </tr>      
+            <tr>
+                <td>pin code </td>
+                <td><%= user.pin_code %></td>
+            </tr>      
+            <tr>
+                <td>Refference Name </td>
+                <td><%= user.referrence1_name %></td>
+            </tr>      
+            <tr>
+                <td>Refference Contact </td>
+                <td><%= user.referrence1_contact %></td>
+            </tr>      
+            <tr>
+                <td>Refference Name 2nd</td>
+                <td><%= user.referrence2_name %></td>
+            </tr>      
+            <tr>
+                <td>Refference Contact 2nd</td>
+                <td><%= user.referrence2_contact %></td>
+            </tr>      
+            <tr>
+                <td>Attached Docs Id</td>
+                <td><%= user.document_id %></td>
+            </tr>      
+            <tr>
+                <td>Bank Name</td>
+                <td><%= user.bank_name %></td>
+            </tr>      
+            <tr>
+                <td>Bank account number</td>
+                <td><%= user.account_number %></td>
+            </tr>      
+            <tr>
+                <td>Account holder name</td>
+                <td><%= user.account_holder_name %></td>
+            </tr>      
+            <tr>
+                <td>IFSC code</td>
+                <td><%= user.ifsc_code %></td>
+            </tr>      
+            <tr>
+                <td>First Image</td>
+                <td><img src="<%= user.image_1 %>" alt="" style="width: 100px;"></td>
+            </tr>      
+            <tr>
+                <td>Second Image</td>
+                <td><img src="<%= user.image_2 %>" alt="" style="width: 100px;"></td>
+            </tr>      
+            <tr>
+                <td>Third Image</td>
+                <td><img src="<%= user.image_3 %>" alt="" style="width: 100px;"></td>
+            </tr>      
+            <tr>
+                <td>Video</td>
+                <td><img src="<%= user.video %>" alt="" style="width: 100px;"></td>
+            </tr>      
+            <tr>
+                <td>Status </td>
+                <td><%= app.application_status %></td>
+            </tr>        
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center" ><a href="/user/approve/app/<%= app.id %>" class="btn btn-sm btn-success me-2">Approve</a><a href="/user/reject/app/<%= app.id %>" class="btn btn-sm btn-warning">Reject</a></div>
+</div>
+
+
+<%- include('./partials/footer.ejs') %>

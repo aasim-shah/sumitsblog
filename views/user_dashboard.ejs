@@ -1,0 +1,29 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<div class="container">
+    <table class="table">
+        <thead class="table-dark">
+         <tr class="text-center">
+             <td>Name </td>
+             <td>Phone </td>
+             <td>Email </td>
+             <td>Status </td>
+         </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < apps.length; i++) { %>
+                <tr class="text-center">
+                  <td><%= apps[i].name %></td>
+                  <td><%= apps[i].phone %></td>
+                  <td><%= apps[i].email %></td>
+                  <td><%= apps[i].application_status %></td>
+
+                </tr>
+             <% } %>
+        </tbody>
+      </table>
+</div>
+
+
+<%- include('./partials/footer.ejs') %>

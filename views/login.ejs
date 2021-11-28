@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<div class="container">
+    <div class="col-10 col-md-7 mx-auto">
+        <form action="/user/login" method="post">
+            <input type="text" name="phone" id="" placeholder="Phone Number" class="form-control mt-2">
+            <input type="text" name="password" id="" placeholder="Password" class="form-control mt-2">
+            <div class="d-flex justify-content-center mt-3">  <button type="submit" class="btn btn-sm btn-success px-3">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('./partials/footer.ejs') %>

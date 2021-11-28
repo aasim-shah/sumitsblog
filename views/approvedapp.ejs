@@ -1,0 +1,43 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<div class="container mt-4">
+    <h4>Your current Plan Request </h4>
+    <div class="row">
+        <div class="col-12 mt-4 col-md-6 text-center d-flex " style="align-items: center; justify-content: center;">
+            <div class="img text-center">
+                <img src="/congratulation.png" alt="" style="width: 80px;" class="align-middle"> 
+            </div>
+        </div>
+    </div>
+    <div class="text-success text-center mt-3 "><h4>Application Approved  :)</h4></div>
+    <div class="container mt-4">
+        <table class="mx-auto">
+            <tr>
+                <td>Applied on :</td>
+                <td><%= app.applied_on %></td>
+            </tr>
+            <tr>
+                <td>Approved on :</td>
+                <td><%= app.approved_date %></td>
+            </tr>
+            <tr>
+                <td>Disbursed on :</td>
+                <td>Something Static</td>
+            </tr>
+            <tr>
+                <td>Repayment date :</td>
+                <td>date and time</td>
+            </tr>
+            <tr>
+                <td>Total Amount :</td>
+                <td><%= app.amount %></td>
+            </tr>
+        </table>
+        <div class="repay text-center mt-3">
+            <a href="" class="btn btn-sm btn-success px2 rounded"> Repay NOw</a>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

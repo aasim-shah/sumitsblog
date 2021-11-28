@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<div class="container-fluid">
+   <div class="col-10 col-md-7 text-center mt-4">
+       <form action="/user/package" method="post">
+           <input type="text" name="amount" value="10k" readonly class="form-control mt-2">
+           <input type="text" name="duration" value="7 days" readonly class="form-control mt-2">
+           <button type="submit" class="btn btn-warning btn-sm rounded mt-3">Apply NOw</button>
+       </form>
+   </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>
