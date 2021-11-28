@@ -7,9 +7,11 @@ const session = require('express-session')
 const path = require('path')
 const bodyParser = require('body-parser')
 var jwt = require('jsonwebtoken');
+const http = require('http');
 const ejs = require('ejs')
 const app = express()
 const multer  = require('multer')
+const { config } = require('dotenv')
 app.set('view engine' , 'ejs')
 app.use(session({ secret: "cats" }));
 app.use('/user' , userRouter)
@@ -28,7 +30,7 @@ var storage = multer.diskStorage({
         cb(null, Date.now() + '-' + file.originalname)      
     }
 })
-const port = process.env.PORT || 3000 ;
+const port = process.env.PORT || config.httpPort;
 
 app.get('/' , (req , res) => {
     
