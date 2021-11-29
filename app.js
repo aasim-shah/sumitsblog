@@ -60,12 +60,6 @@ app.get('/profile', (req , res)=> {
     res.render('userdata2')
 })
   
-
-let idAdmin = ()=>{
-
-}
-
-
 app.listen(port , () => {
-    console.log(`server is running on ${port} at http://localhost:3000`);
+    console.log(`server is running on ${port} at http://localhost:${port}`);
 })
