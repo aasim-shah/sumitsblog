@@ -1,12 +1,19 @@
 <%- include('./partials/header.ejs') %>
 <%- include('./partials/navbar.ejs') %>
+<style>
+    label{
+        color: gray;
+        font-weight: 600;
+        margin-top: 8px;
+    }
+</style>
 
 <div class="container">
     <div class="col-md-6 col-10 mx-auto">
         <form action="/user/info"  method="post" enctype="multipart/form-data" >
             <div class="form-group">
                 <label for="first_name">First Name * :</label>
-                <input type="text" name="first_name" id="first_name" require class="form-control">
+                <input type="text" name="first_name" id="first_name" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="middle_name">Middle Name * :</label>
@@ -14,100 +21,101 @@
             </div>
             <div class="form-group">
                 <label for="last_name">Last Name * :</label>
-                <input type="text" name="last_name" id="last_name" require class="form-control">
+                <input type="text" name="last_name" id="last_name" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="email">Email * :</label>
-                <input type="text" name="email" id="email" require class="form-control">
+                <input type="text" name="email" id="email" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="phone">Phone * :</label>
-                <input type="text" name="phone" id="phone" require class="form-control" readonly>
+                <input type="text" name="phone" id="phone" required  class="form-control" readonly value="<%= user.phone %>">
             </div>
             <div class="form-group">
                 <label for="father_name">Father Name * :</label>
-                <input type="text" name="father_name" id="father_name" require class="form-control">
+                <input type="text" name="father_name" id="father_name" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="mother_name">Mother Name * :</label>
-                <input type="text" name="mother_name" id="mother_name" require class="form-control">
+                <input type="text" name="mother_name" id="mother_name" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="dob">Date of Birth * :</label>
-                <input type="date" name="dob" id="dob" require class="form-control">
+                <input type="date" name="dob" id="dob" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="address">Address * :</label>
-                <input type="text" name="address" id="address" require class="form-control">
+                <input type="text" name="address" id="address" required  class="form-control">
             </div>
             
             <div class="form-group">
                 <label for="state">State * :</label>
-                <input type="text" name="state" id="state" require class="form-control">
+                <input type="text" name="state" id="state" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="city">City * :</label>
-                <input type="text" name="city" id="city" require class="form-control">
+                <input type="text" name="city" id="city" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="pin_code">Pin code * :</label>
-                <input type="text" name="pin_code" id="pin_code" require class="form-control">
+                <input type="text" name="pin_code" id="pin_code" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="referrence1_name">referrence1_name * :</label>
-                <input type="text" name="referrence1_name" id="referrence1_name" require class="form-control">
+                <input type="text" name="referrence1_name" id="referrence1_name" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="referrence1_contact">referrence1_contact * :</label>
-                <input type="text" name="referrence1_contact" id="referrence1_contact" require class="form-control">
+                <input type="text" name="referrence1_contact" id="referrence1_contact" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="referrence2_name">referrence2_name * :</label>
-                <input type="text" name="referrence2_name" id="referrence2_name" require class="form-control">
+                <input type="text" name="referrence2_name" id="referrence2_name" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="referrence2_contact">referrence2_contact * :</label>
-                <input type="text" name="referrence2_contact" id="referrence2_contact" require class="form-control">
+                <input type="text" name="referrence2_contact" id="referrence2_contact" required  class="form-control">
             </div>
            
             
             <div class="form-group">
                 <label for="bank_name">bank_name * :</label>
-                <input type="text" name="bank_name" id="bank_name" require class="form-control">
+                <input type="text" name="bank_name" id="bank_name" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="account_holder_name">account_holder_name * :</label>
-                <input type="text" name="account_holder_name" id="account_holder_name" require class="form-control">
+                <input type="text" name="account_holder_name" id="account_holder_name" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="ifsc_code">ifsc_code * :</label>
-                <input type="text" name="ifsc_code" id="ifsc_code" require class="form-control">
+                <input type="text" name="ifsc_code" id="ifsc_code" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="account_number">account_number * :</label>
-                <input type="text" name="account_number" id="account_number" require class="form-control">
+                <input type="text" name="account_number" id="account_number" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="documnet_id">documnet_id * :</label>
-                <input type="text" name="documnet_id" id="documnet_id" require class="form-control">
+                <input type="text" name="documnet_id" id="documnet_id" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="image_1">image_1 * :</label>
-                <input type="file" name="image_1" id="image_1" require class="form-control">
+                <input type="file" name="image_1" id="image_1" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="image_2">image_2 * :</label>
-                <input type="file" name="image_2" id="image_2" require class="form-control">
+                <input type="file" name="image_2" id="image_2" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="image_3">image_3 * :</label>
-                <input type="file" name="image_3" id="image_3" require class="form-control">
+                <input type="file" name="image_3" id="image_3" required  class="form-control">
             </div>
             <div class="form-group">
                 <label for="video">video * :</label>
-                <input type="file" name="video" id="video" require class="form-control">
+                <input type="file" name="video" id="video" required  class="form-control">
             </div>
-           <input type="submit" value="submit">
+            <div class="form-group text-center mb-4">
+           <input type="submit" value="submit" class="btn btn-sm btn-success w-50   mt-2"> </div>
         </form>
     </div>
 </div>

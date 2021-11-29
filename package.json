@@ -8,7 +8,7 @@
     "npm" : "6.14.14"
   },
   "scripts": {
-    "start" : "node ../app.js"
+    "start" : "node app.js"
   },
   "author": "Aasim",
   "license": "ISC",
@@ -20,10 +20,10 @@
     "express-session": "^1.17.2",
     "hbs": "^4.1.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.12",
     "multer": "^1.4.3",
     "passport": "^0.5.0",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "mongoose": "^6.0.12"
   }
 }

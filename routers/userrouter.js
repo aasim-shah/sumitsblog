@@ -60,8 +60,6 @@ router.post('/register' , async(req ,res) => {
     if(password === cpassword){
         let encpassword = await bcrpyt.hash(password , 10)
         const user = new Usermodel({
-            first_name : req.body.first_name,
-            email : req.body.email ,
             phone : req.body.phone,
             password : encpassword
         })
@@ -111,9 +109,10 @@ router.get('/logout' , tokenauth , (req , res) => {
   console.log('logged out');
   res.redirect('/user/login')
 })
-router.get('/info' , tokenauth,(req ,res) => {
+router.get('/info' , tokenauth, async(req ,res) => {
   let e = req.user.id;
-  res.render('userdata' , {user : e})
+  const user  = await Usermodel.findById(e);
+  res.render('userdata' , { user : user})
 })
 const cpUpload = upload.fields([{ name: 'image_1', maxCount: 1 }, { name: 'image_2', maxCount: 1 }, {name : 'image_3', maxCount:1} , {name :'video' , maxCount: 1}])
 
@@ -148,6 +147,7 @@ const userInfo = {
   video : '/'+ req.files['video'][0].originalname,
 }
 const userinfo = await Usermodel.findByIdAndUpdate(req.user.id , userInfo);
+console.log(req.user.id);
 console.log(userinfo);
 res.send('done')
 
@@ -175,14 +175,17 @@ router.post('/package' , tokenauth, async (req , res) => {
 let phone = req.user.phone;
 let checkapps = await ApplicationModel.findOne({phone : phone});
 console.log(phone);
-console.log(checkapps);
 if(checkapps ){
   res.send('you already have requested an application');
 }else{
-
   let amount = req.body.amount;
   let duration = req.body.duration;
-  res.render('signature' , {user : req.user , amount : amount , duration : duration})
+  let user_info = await Usermodel.findOne({phone : phone})
+  if(user_info.email && user_info.bank_name){
+    res.render('signature' , {user : req.user , amount : amount , duration : duration})
+  }else{
+   res.redirect('/user/info')
+  }
 }
 })
 router.post('/sign' , tokenauth, async (req , res) => {
